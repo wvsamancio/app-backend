@@ -19,6 +19,6 @@ public class Info {
     @NotEmpty(message = "Title is required")
     private String title;
 
-    @NotEmpty(message = "Description is required")
-    private String description;
+    @NotEmpty(message = "Content is required")
+    private String content;
 }
