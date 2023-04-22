@@ -27,4 +27,7 @@ public class Contribute {
 
     @NotEmpty(message = "Longitude is required")
     private String lng;
+
+    @NotEmpty(message = "User ID is required")
+    private String userId;
 }
