@@ -35,3 +35,6 @@ build/
 ### DOCKER ###
 docker-compose.yml
 database/
+
+### SCRIPTS ###
+*.sh
