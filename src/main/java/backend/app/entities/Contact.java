@@ -19,6 +19,6 @@ public class Contact {
     @NotEmpty(message = "Icon is required")
     private String icon;
 
-    @NotEmpty(message = "Content is required")
-    private String content;
+    @NotEmpty(message = "Value is required")
+    private String value;
 }
