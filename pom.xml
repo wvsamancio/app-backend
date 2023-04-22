@@ -11,9 +11,9 @@
 	</parent>
 	<groupId>backend</groupId>
 	<artifactId>app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>app</name>
-	<description>Demo project for Spring Boot</description>
+	<version>1.0.0</version>
+	<name>app-backend</name>
+	<description>Back-end for Application for Topics in SI3</description>
 	<properties>
 		<java.version>20</java.version>
 	</properties>
