@@ -18,7 +18,7 @@ import backend.app.services.ContributeService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/contributes")
+@RequestMapping("/contributions")
 public class ContributeResource {
     @Autowired
     private ContributeService contributeService;
