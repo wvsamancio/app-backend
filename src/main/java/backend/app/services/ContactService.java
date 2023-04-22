@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backend.app.entities.Contact;
+import backend.app.exceptions.NotFoundException;
 import backend.app.repositories.ContactRepository;
 
 @Service
@@ -23,7 +24,7 @@ public class ContactService {
 
     public Contact get(String id) {
         return contactRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Contact not found"));
+                () -> new NotFoundException("Contact not found"));
     }
 
     public Contact save(Contact contact) {
