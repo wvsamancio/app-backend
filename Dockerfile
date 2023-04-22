@@ -1,4 +1,4 @@
-FROM openjdk:20-jdk-alpine3.12
+FROM openjdk:20-jdk-slim
 
 EXPOSE 8080
 
