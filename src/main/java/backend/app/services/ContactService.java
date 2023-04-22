@@ -22,7 +22,8 @@ public class ContactService {
     }
 
     public Contact get(String id) {
-        return contactRepository.findById(id).get();
+        return contactRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Contact not found"));
     }
 
     public Contact save(Contact contact) {
@@ -34,6 +35,7 @@ public class ContactService {
     }
 
     public void delete(String id) {
+        get(id);
         contactRepository.deleteById(id);
     }
 }

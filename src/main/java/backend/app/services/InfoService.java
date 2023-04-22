@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backend.app.entities.Info;
+import backend.app.exceptions.NotFoundException;
 import backend.app.repositories.InfoRepository;
 
 @Service
@@ -22,18 +23,16 @@ public class InfoService {
     }
 
     public Info get(String id) {
-        return infoRepository.findById(id).get();
+        return infoRepository.findById(id).orElseThrow(
+                () -> new NotFoundException("Info not found"));
     }
 
     public Info save(Info info) {
         return infoRepository.save(info);
     }
 
-    public Info update(Info info) {
-        return infoRepository.save(info);
-    }
-
     public void delete(String id) {
+        get(id);
         infoRepository.deleteById(id);
     }
 }

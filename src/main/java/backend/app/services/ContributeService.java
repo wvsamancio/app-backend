@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backend.app.entities.Contribute;
+import backend.app.exceptions.NotFoundException;
 import backend.app.repositories.ContributeRepository;
 
 @Service
@@ -22,18 +23,16 @@ public class ContributeService {
     }
 
     public Contribute get(String id) {
-        return contributeRepository.findById(id).get();
+        return contributeRepository.findById(id).orElseThrow(
+                () -> new NotFoundException("Contribute not found"));
     }
 
     public Contribute save(Contribute contribute) {
         return contributeRepository.save(contribute);
     }
 
-    public Contribute update(Contribute contribute) {
-        return contributeRepository.save(contribute);
-    }
-
     public void delete(String id) {
+        get(id);
         contributeRepository.deleteById(id);
     }
 }
